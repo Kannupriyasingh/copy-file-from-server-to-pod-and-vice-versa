@@ -1,0 +1,18 @@
+// copy file from local to server
+// scp -p{port} {local_path_of_the_file} {name.space}@{serverip}:/home/{name.space}
+$ scp -P2525 /home/fa064197/Downloads/reviews.csv kannu.priya@10.10.220.155:/home/kannu.priya
+
+
+// copy file from server to local 
+// scp -p{port} {name.space}@{serverip}:/home/{name.space}/{file-name} {local_path_where_file_to_be_add} 
+$ scp -P2525 kannu.priya@10.10.220.155:/home/kannu.priya/marchprocessed.csv /home/fa064197/Desktop/
+
+
+// copy file from server to pod
+// kubectl --kubeconfig={name.space}.kubeconfig cp {server-path-of-file} {stage-pod-namespace}/{pod-name}:{server-path}
+$ kubectl --kubeconfig=kannu.priya.kubeconfig cp /home/kannu.priya/reviews.csv ni-el-elreviewanalytics-services-stage/ni-el-elreviewanalytics-services-stage-5798564755-lspt5:/apps/service/reviews.csv
+
+
+// copy file from pod to server
+// kubectl --kubeconfig={name.space}.kubeconfig cp {stage-pod-namespace}/{pod-name}:{server-path} {server-path-of-file}
+$ kubectl --kubeconfig=kannu.priya.kubeconfig cp ni-el-elreviewanalytics-services-stage/ni-el-elreviewanalytics-services-stage-8584dbc9-8wgmx:/apps/service/segmentation/marchprocessed.csv /home/kannu.priya/marchprocessed.csv

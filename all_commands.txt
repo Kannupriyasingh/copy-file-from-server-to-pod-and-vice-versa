@@ -10,7 +10,7 @@ $ scp -P2525 kannu.priya@10.10.220.155:/home/kannu.priya/marchprocessed.csv /hom
 
 // copy file from server to pod
 // kubectl --kubeconfig={name.space}.kubeconfig cp {server-path-of-file} {stage-pod-namespace}/{pod-name}:{server-path}
-$ kubectl --kubeconfig=kannu.priya.kubeconfig cp /home/kannu.priya/reviews.csv ni-el-elreviewanalytics-services-stage/ni-el-elreviewanalytics-services-stage-5798564755-lspt5:/apps/service/reviews.csv
+$ kubectl --kubeconfig=kannu.priya.kubeconfig cp /home/kannu.priya/reviews.csv ni-el-elreviewanalytics-services-stage/ni-el-elreviewanalytics-services-stage-8584dbc9-kp9zl:/apps/service/segmentation/reviews.csv
 
 
 // copy file from pod to server
